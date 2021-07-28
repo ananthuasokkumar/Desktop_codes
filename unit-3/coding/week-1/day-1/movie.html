@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        background-color: rgb(231, 220, 231);
+      }
+      .container {
+        display: grid;
+        width: 95%;
+        grid-template-columns: repeat(4, 1fr);
+        row-gap: 25px;
+        justify-content: center;
+        margin-left: 5%;
+        margin-top: 150px;
+        /* justify-content: space-evenly; */
+      }
+      .subdiv {
+        width: 250px;
+        height: 350px;
+        border: 1px solid plum;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        line-height: 0.3cm;
+        background-color: salmon;
+        box-shadow: 0px 0px 9px rgb(128, 14, 52);
+        border-radius: 7px;
+      }
+      .subdiv > img {
+        width: 220px;
+        height: 180px;
+        margin-top: 10px;
+      }
+      .subdiv > p:first-child {
+        margin-top: -10px;
+      }
+      .subdiv:hover {
+        transform: scale(1.1);
+      }
+      .errdiv {
+        width: 250px;
+        height: 350px;
+        background-color: teal;
+        box-shadow: 0px 0px 9px rgb(128, 14, 52);
+        border-radius: 7px;
+      }
+      .errdiv:hover{
+        transform: scale(1.1);
+      }
+      .errdiv > img {
+        width: 250px;
+        height: 200px;
+      }
+      .recommend {
+        width: 100px;
+        height: 30px;
+        background-color: seagreen;
+        margin-left: 75px;
+      }
+      .recommend > p {
+        padding-top: 5px;
+      }
+      .msg {
+        text-align: center;
+        font-size: 16px;
+        color: seashell;
+      }
+      #btn {
+        background-color: violet;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>movies anywhere</h1>
+    <input type="text" id="mov" />
+    <button onclick="movies()" id="btn">search</button>
+  </body>
+</html>
+<script>
+  //http://www.omdbapi.com/?i=tt3896198&apikey=cfc41090
+  var div = document.createElement("div");
+  div.setAttribute("class", "container");
+  async function movies() {
+    let movie = document.getElementById("mov").value;
+    try {
+      let data = await fetch(
+        `http://www.omdbapi.com/?t=${movie}&apikey=cfc41090`
+      );
+      let res = await data.json();
+      console.log(res);
+
+      //console.log("res", res.poster);
+      // if(res.Title==undefined)
+      var subdiv = document.createElement("div");
+      subdiv.setAttribute("class", "subdiv");
+
+      let image = document.createElement("img");
+      image.src = res.Poster;
+
+      let Mname = document.createElement("p");
+      Mname.innerHTML = `${res.Title}`;
+
+      if (res.Title == undefined) {
+        image.src = `https://laughingsquid.com/wp-content/uploads/2016/10/taco-trip.gif`;
+        var errdiv = document.createElement("div");
+        errdiv.setAttribute("class", "errdiv");
+
+        let errMessage = document.createElement("p");
+        errMessage.setAttribute("class", "msg");
+        errMessage.innerText = "Sorry!!";
+
+        let errMessage2 = document.createElement("p");
+        errMessage2.setAttribute("class", "msg");
+        errMessage2.innerText = "Movie Not Found";
+
+        errdiv.append(image, errMessage, errMessage2);
+        div.append(errdiv);
+        document.body.append(div);
+      } else {
+        let Imdb = document.createElement("p");
+        Imdb.innerHTML = `IMDB:${res.imdbRating}`;
+
+        let reDate = document.createElement("p");
+        reDate.innerHTML = `Release Date:${res.Year}`;
+
+        let genre = document.createElement("p");
+        genre.innerHTML = `Genre:${res.Genre}`;
+
+        let recommended = document.createElement("div");
+        if (res.imdbRating >= 8.5) {
+          recommended.setAttribute("class", "recommend");
+          // recommended.innerText = "Recommended";
+          let recText = document.createElement("p");
+          recText.innerText = "Recommended";
+          recommended.append(recText);
+        }
+
+        subdiv.append(image, recommended, Mname, Imdb, reDate, genre);
+        div.append(subdiv);
+        document.body.append(div);
+      }
+    } catch (err) {
+      console.log("error");
+    }
+  }
+  //   movies();
+</script>
