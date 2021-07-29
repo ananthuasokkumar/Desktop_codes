@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <style>
+      body {
+        /* background-color: coral; */
+        justify-content: center;
+      }
+      .navbar {
+        width: 100%;
+        height: 60px;
+        display: flex;
+        justify-content: space-evenly;
+        /* border: 1px solid salmon; */
+        /* background-color: plum; */
+         border-bottom: 1px solid gray;
+      }
+      .righticons {
+        /* background-color: blanchedalmond; */
+        display: flex;
+        width: 15%;
+        height: 60px;
+        align-items: center;
+        justify-content: center;
+        
+      }
+      .righticons > img {
+        width: 40px;
+        height: 40px;
+        margin-top: 0px;
+        margin-left: 10px;
+      }
+      #q {
+        width: 35%;
+        height: 30px;
+        margin-top: 13px;
+      }
+      button {
+        width: 5%;
+        height: 40px;
+        margin-top: 10px;
+        margin-left: -90px;
+      }
+      .lefticons {
+        /* background-color: blanchedalmond; */
+        width: 15%;
+        height: 60px;
+      }
+      #videos {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        width: 90%;
+        height: 100vh;
+        gap: 20px;
+        margin-left: 5%;
+        justify-content: center;
+        background-color: rgb(249,249,249);
+        border-top: 1px solid gray;
+        margin-top: 50px;
+      }
+      .minidiv {
+        width: 260px;
+        height: 215px;
+        box-shadow: 0px 0px 6px grey;
+        /* margin-left: 20px; */
+      }
+      .minidiv:hover {
+        transform: scale(1.1);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="navbar">
+      <div class="righticons">
+        <img
+          src="https://i.pinimg.com/originals/31/23/9a/31239a2f70e4f8e4e3263fafb00ace1c.png"
+          alt=""
+        />
+        <h3>YouTube</h3>
+      </div>
+      <input type="text" placeholder="Search" id="q" />
+      <button onclick="findVideos()">Search</button>
+      <div class="lefticons"></div>
+    </div>
+    <div id="videos"></div>
+  </body>
+</html>
+<script>
+  //     https://youtube.googleapis.com/youtube/v3/search?key=[YOUR_API_KEY]' \
+  //   --header 'Authorization: Bearer [YOUR_ACCESS_TOKEN]' \
+  //   --header 'Accept: application/json' \
+  //   --compressed
+
+  //key:AIzaSyBK_1UBD8FrJ57f44pcIa_fA6TmVfllrXg
+  async function findVideos() {
+    let video_div = document.getElementById("videos");
+    video_div.innerHTML = null;
+    var q = document.getElementById("q").value;
+    try {
+      let res = await fetch(
+        `https://youtube.googleapis.com/youtube/v3/search?q=${q}&key=AIzaSyBK_1UBD8FrJ57f44pcIa_fA6TmVfllrXg&maxResults=20&regionCode=IN`
+      );
+      let data = await res.json();
+      console.log("data", data);
+
+      let video_div = document.getElementById("videos");
+      // data.forEach(element => {
+
+      // });
+      let videos_data = data.items;
+      let { items } = data;
+
+      items = items.filter((el) => {
+        return el.id.videoId != undefined;
+      });
+
+      items.forEach(({ id: { videoId } }) => {
+        console.log("videoid", videoId);
+        let div = document.createElement("div");
+        div.setAttribute("class", "minidiv");
+        div.style.marginTop = "20px";
+        div.innerHTML = `<iframe width="260" height="215" src="https://www.youtube.com/embed/${videoId}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
+        video_div.appendChild(div);
+      });
+    } catch (err) {
+      console.log("error", err);
+    }
+  }
+
+  async function homeVideos() {
+    try {
+      let res = await fetch(
+        `https://youtube.googleapis.com/youtube/v3/search?order=viewCount&key=AIzaSyBK_1UBD8FrJ57f44pcIa_fA6TmVfllrXg&maxResults=20&regionCode=IN`
+      );
+      let data = await res.json();
+      console.log("data", data);
+
+      let video_div = document.getElementById("videos");
+      // data.forEach(element => {
+
+      // });
+      let videos_data = data.items;
+      let { items } = data;
+
+      items = items.filter((el) => {
+        return el.id.videoId != undefined;
+      });
+
+      items.forEach(({ id: { videoId } }) => {
+        console.log("videoid", videoId);
+        let div = document.createElement("div");
+        div.setAttribute("class", "minidiv");
+        div.style.marginTop = "20px";
+        div.innerHTML = `<iframe width="260" height="215" src="https://www.youtube.com/embed/${videoId}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
+        video_div.appendChild(div);
+      });
+    } catch (err) {
+      console.log("error", err);
+    }
+  }
+  homeVideos();
+  
+</script>
