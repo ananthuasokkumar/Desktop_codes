@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-image: url("https://pa1.narvii.com/6384/bccb3ef74fb6f8efb28ccde23946738d94794436_hq.gif");
+            background-size: cover;
+        }
+        input {
+        width: 300px;
+        margin-top:300px;
+        margin-left: 450px;
+        height: 40px;
+        border-top-left-radius: 7px;
+        border-top-right-radius: 7px;
+        border:none;
+      }
+      .starsProp {
+        height: 200px;
+        width: 300px;
+         margin-left: 450px;
+        border: 1px solid black;
+        border-top: none;
+        overflow: scroll;
+        background-color: rgb(156, 223, 240);
+        
+      }
+      .minidiv{
+         display: flex;
+         width: 300px;
+         justify-content: space-around;
+         font-size: 20px;
+      }
+      input:focus{
+          outline: none !important;
+      }
+      .minidiv:hover{
+          color:red ;
+          /* border: 1px solid red; */
+          background-color: blue;
+      }
+    </style>
+    
+</head>
+<body>
+    <input type="text" oninput="throttle()" id="search" placeholder="Enter Search Character">
+    <div id="starsProperties"></div>
+</body>
+</html>
+<script>
+     var div=document.getElementById('starsProperties');
+    //  div.addEventListener('mouseleave',hide);
+    //  hide=()=>{
+    //      div.style.display="none";
+    //      return 0;
+    //  }
+
+     var timerId;
+    async function searchChar(){
+
+        let search=document.getElementById("search").value;
+        
+        
+        console.log(search.length);
+        try{
+        if(search.length<=2)
+        return 0;
+        let res=await fetch(`https://swapi.dev/api/people/?search=${search}`);
+        let data=await res.json();
+       // console.log(data.results);
+        return data.results;
+        }
+        catch(err){
+            console.log("error",err);
+        }
+    }
+    // searchChar()
+   // div.addEventListener("keypress",appendCharacters);
+
+function throttle(){
+
+    if(timerId)
+    return false;
+
+    timerId=setTimeout(()=>{
+        wars();
+        timerId=undefined;
+    },500);
+
+
+}
+
+    function appendCharacters(char){
+         div.innerHTML=null;
+        char.forEach(({name,gender}) => {
+        div.setAttribute("class","starsProp");
+
+        let minidiv=document.createElement('div');
+           minidiv.setAttribute('class','minidiv');
+
+        let name1=document.createElement('p');
+            name1.innerText=name;
+        let gender1=document.createElement('p');
+            gender1.innerText=gender;
+            minidiv.append(name1,gender1);
+
+        div.append(minidiv);    
+        });
+    
+
+    }
+
+  async function wars(){
+    let result=await searchChar();
+    //console.log(result);
+   
+    appendCharacters(result);
+  }
+// wars();
+</script>
