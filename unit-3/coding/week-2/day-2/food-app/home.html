@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Zomato</title>
+    <link rel="stylesheet" href="./styles/style.css" />
+  </head>
+  <body></body>
+</html>
+<script type="module">
+  // console.log('hello');
+
+  import { navbar } from "./components/navbar.js";
+  import { getData, appendData } from "./script/showData.js";
+  
+
+  async function checkData() {
+    try {
+      let res = await getData(
+        "https://www.themealdb.com/api/json/v1/1/filter.php?i=chicken_breast"
+      );
+
+      
+      console.log("res", res);
+      let parent = document.getElementById("data");
+      appendData(res, parent);
+    } catch (err) {
+      console.log("error", err);
+    }
+  }
+  checkData();
+  document.body.innerHTML = navbar();
+ 
+  
+
+    async function searchItem() {
+    let input = document.getElementById("searchFood").value;
+      console.log("inp", input);
+
+      let parent = document.getElementById("data");
+      parent.innerHTML = null;
+
+      try {
+        let res = await fetch(
+          `https://www.themealdb.com/api/json/v1/1/search.php?s=${input}`
+        );
+        let data = await res.json();
+        console.log("data:", data);
+        appendData(data, parent);
+        // return data;
+      } catch (err) {
+        console.log("err:", err);
+      }
+    }
+
+document.getElementById('search').addEventListener('click',searchItem);
+  // var button = document.getElementById("search");
+  // button.addEventListener('click',searchItem);
+
+//   function searchItem() {
+//     console.log("here");
+//   }
+</script>
