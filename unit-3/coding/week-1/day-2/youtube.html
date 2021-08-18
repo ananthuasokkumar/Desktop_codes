@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .navbar {
+        width: 100%;
+        height: 60px;
+        display: flex;
+        justify-content: space-evenly;
+        border: 1px solid salmon;
+        background-color: plum;
+      }
+      .righticons {
+        background-color: blanchedalmond;
+        width: 15%;
+        height: 60px;
+      }
+      #q {
+        width: 30%;
+        height: 40px;
+        margin-top: 7px;
+      }
+      button {
+        width: 5%;
+        height: 40px;
+        margin-top: 10px;
+        margin-left: -100px;
+      }
+      .lefticons {
+        background-color: blanchedalmond;
+        width: 15%;
+        height: 60px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="navbar">
+      <div class="righticons"></div>
+      <input type="text" placeholder="Search" id="q" />
+      <button onclick="findVideos()">Search</button>
+      <div class="lefticons"></div>
+    </div>
+    <div id="videos">videos</div>
+  </body>
+</html>
+<script>
+  //     https://youtube.googleapis.com/youtube/v3/search?key=[YOUR_API_KEY]' \
+  //   --header 'Authorization: Bearer [YOUR_ACCESS_TOKEN]' \
+  //   --header 'Accept: application/json' \
+  //   --compressed
+
+  //key:AIzaSyBK_1UBD8FrJ57f44pcIa_fA6TmVfllrXg
+  async function findVideos() {
+    var q = document.getElementById("q").value;
+    try {
+      let res = await fetch(
+        `https://youtube.googleapis.com/youtube/v3/search?q=${q}&key=AIzaSyBK_1UBD8FrJ57f44pcIa_fA6TmVfllrXg&maxResults=10&regionCode=IN`
+      );
+      let data = await res.json();
+      console.log("data", data);
+
+      let video_div = document.getElementById("videos");
+      // data.forEach(element => {
+
+      // });
+      let videos_data = data.items;
+      let { items } = data;
+
+      items = items.filter((el) => {
+        return el.id.videoId != undefined;
+      });
+
+      items.forEach(({ id: { videoId } }) => {
+        console.log("videoid", videoId);
+        let div = document.createElement("div");
+        div.style.marginTop = "20px";
+        div.innerHTML = `<iframe width="560" height="315" src="https://www.youtube.com/embed/${videoId}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
+        video_div.appendChild(div);
+      });
+    } catch (err) {
+      console.log("error", err);
+    }
+  }
+  //makeRequest();
+</script>

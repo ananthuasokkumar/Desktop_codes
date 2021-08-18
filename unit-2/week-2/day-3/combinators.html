@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+   .container{
+       width: 80%;
+       height: 750px;
+      
+       margin: auto;
+       background-color: whitesmoke;
+   }
+   #item1{
+       display: flex;
+       flex-direction: row;
+       justify-content: space-evenly;
+       margin-top: 50px !important;
+       
+   }
+   .cs1{
+       width: 30%;
+       height: 100px;
+       border-radius: 7px;
+       text-align: center;
+       color: white;
+       margin-top: 20px;
+   }
+   .cs2{
+       background-color: yellow;
+   }
+    .cs3{
+       background-color: blue;
+   }
+    .cs4{
+       background-color: teal;
+   }
+#item1 .img{
+    height: 50px;
+    width: 50px;
+    border-radius: 25px;
+    background-color: white;   
+     background-image: url(https://masai-course.s3.ap-south-1.amazonaws.com/resources/images/icon_circle.png);
+
+    float: left;
+   margin-top: 20px;
+   margin-left: 25px;
+}
+#item2{
+height: 100px;
+display: flex;
+flex-direction: column;
+
+}
+#item2>#sub2{
+    height: 30px;
+    display: flex;
+    flex-direction: row;
+     margin: 5px 70px 0px 70px ;
+     background-color: rgb(228, 224, 224);
+     border-radius: 5px !important;
+
+}
+#item2>.a{
+    height:70px ;
+    width: 50%;
+    margin: auto;
+    color: blue;
+    font-size: 30px;
+    text-align: center;
+     margin-top: 25px;
+}
+.b1{
+    width: 25%;
+    
+text-align: center;
+}
+#item2 #b11{
+    background-color: blue;
+    color: white;
+}
+
+#item3{
+    display: grid;
+    height: 100vh;
+    grid-template-columns: 31% 31% 31%;
+    grid-template-areas: "a b c";
+    margin: 100px 10px 0px 10px;
+    grid-gap:10px
+    background-color: whitesmoke;
+}
+.c1{
+    grid-area: a;
+   
+    text-align: center;
+}
+.c2{
+    grid-area: b;
+   
+    text-align: center;
+}
+.c3{
+    grid-area: c;
+   
+    text-align: center;
+}
+#item3 img{
+    height: 300px;
+}
+#item3 button{
+    height: 25px;
+    width: 120px;
+    margin-top: 30px;
+    color: teal;
+    border: 1px solid teal;
+    align-items: center;
+    background-color: white;
+}
+#item3 span{
+    color: blue;
+    font-size: 15px !important;
+}
+ /*@media screen and (min-width: 480px){
+    grid-template-areas: " a b c ";
+}*/
+    </style>
+</head>
+<body>
+    <div class=" container">
+        <div id="item1">
+            <div class="cs1 cs2">
+                <div class="img"> img</div><h2>Scholarship</h2><p>Available</p></div>
+            <div class="cs1 cs3"><div class="img"></div><h2>Scholarship</h2>
+            <p>Available</p></div>
+            <div class="cs1 cs4"><div class="img"></div><h2>Scholarship</h2>
+            <p>Available</p></div>
+        </div>
+
+        <div id="item2">
+        <div class="a">Popular program</div>
+        <div class="b" id="sub2">
+            <div class="b1" id="b11">Graduate</div>
+            <div class="b1">Post Graduate</div>
+            <div class="b1">PHD Scholarships </div>
+            <div class="b1">Training</div>
+        </div>
+        </div>
+         
+        <div id="item3">
+        <div class="c1 img1"> <img src="https://www.masaischool.com/static/campus/location_1/91springboard_min_1.jpg"/><p>Agriculture</p> <h3>Chemical Engineering</h3><span>free image placeholder service for web designers, serving billions and billions of images each year.
+        
+        C/O https://placeholder.com/ </span><br/><button> APPLY NOW</button></div>
+        <div class="c2 img1"><img src="https://www.masaischool.com/static/campus/location_1/91springboard_min_1.jpg"/><p>Agriculture</p>
+        <h3>Mechanical Engineering</h3><span> free image placeholder service for web designers, serving billions and billions of images each year.
+        
+        C/O https://placeholder.com/ </span><br/><button> APPLY NOW</button></div>
+        <div class="c3 img1"><img src="https://www.masaischool.com/static/campus/location_1/91springboard_min_1.jpg"><p>Agriculture</p>
+        <h3>Bio Engineering</h3><span>free image placeholder service for web designers, serving billions and billions of images each year.
+        
+        C/O https://placeholder.com/ </span><br/><button> APPLY NOW</button></div>
+        </div>
+
+
+
+
+
+    </div>
+</body>
+</html>

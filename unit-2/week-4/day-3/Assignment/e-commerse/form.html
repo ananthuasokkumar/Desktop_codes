@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #productsContainer {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(4, 20%);
+        grid-gap: 3%;
+        text-align: center;
+        margin-left: 5%;
+        margin-top: 30px;
+        /* border: 1px solid black; */
+      }
+      .productDiv {
+        border: 1px solid black;
+        font-family: "Pacifico", cursive;
+        font-weight: 700;
+      }
+      body {
+        background-color: rgb(167, 165, 235);
+        font-family: "Pacifico", cursive;
+      }
+      img {
+        width: 80%;
+        height: 250px;
+      }
+      .cartBtn {
+        margin-left: 30%;
+        height: 40px;
+        width: 120px;
+        background-color: limegreen;
+        border: none;
+        color: whitesmoke;
+        margin-bottom: 20px;
+        border-radius: 3px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Little flowers e-Store</h1>
+    <form id="eForm">
+      <input type="text" id="name" placeholder="Name" />
+      <input type="number" id="price" />
+      <input type="text" id="image" placeholder="Image URL" />
+    </form>
+    <button onclick="addProducts()">Add Products</button>
+    <button onclick="goToCart()">View Cart</button>
+    <div id="productsContainer"></div>
+  </body>
+</html>
+<script src="form.js"></script>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        background-color: rgb(167, 165, 235);
+        font-family: "Pacifico", cursive;
+        text-align: center;
+      }
+      p {
+        font-size: 60px;
+        padding-top: 60px;
+        font-family: "Pacifico", cursive;
+        color: rgb(231, 22, 22);
+      }
+      #shopping {
+        height: 40px;
+        width: 280px;
+        background-color: rgb(226, 25, 226);
+        border-radius: 5px;
+        margin-top: 50px;
+        border: none;
+        color: rgb(12, 235, 86);
+        font-size: 22px;
+      }
+    </style>
+  </head>
+  <body>
+    <p>Thank you for purchasing!!</p>
+    <button id="shopping" onclick="shopping()">Continue Shopping</button>
+  </body>
+</html>
+<script>
+  function shopping() {
+    window.location.href = "products.html";
+  }
+</script>

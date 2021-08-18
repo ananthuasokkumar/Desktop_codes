@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .container {
+        display: grid;
+        grid-gap: 20px;
+        margin: 100px auto;
+        width: 60%;
+        background-color: white;
+        padding: 20px 0px;
+        grid-template: repeat(6, 70px) / repeat(2, 300px);
+        grid-template-areas:
+          "a a"
+          "b c"
+          "b c"
+          "b c"
+          "b c"
+          "b c";
+        font-size: 30px;
+      }
+      @media (min-width: 600px) {
+        .container {
+          display: grid;
+          grid-gap: 20px;
+          margin: 100px auto;
+          width: 60%;
+          background-color: white;
+          padding: 20px 0px;
+          grid-template: repeat(3, 100px) / 400px;
+          grid-template-areas:
+            "a"
+            "b"
+            "c";
+
+          font-size: 30px;
+        }
+      }
+      @media (min-width: 768px) {
+        .container {
+          display: grid;
+          grid-gap: 20px;
+          margin: 100px auto;
+          width: 60%;
+          background-color: white;
+          padding: 20px 0px;
+          grid-template: repeat(6, 70px) / repeat(2, 300px);
+          grid-template-areas:
+            "a a"
+            "b c"
+            "b c"
+            "b c"
+            "b c"
+            "b c";
+          font-size: 30px;
+        }
+      }
+      .bx1 {
+        grid-area: a;
+        background-color: yellow;
+      }
+      .bx2 {
+        grid-area: b;
+        background-color: red;
+      }
+      .bx3 {
+        grid-area: c;
+        background-color: green;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="bx1">Navigation</div>
+      <div class="bx2">LEFTBOX</div>
+      <div class="bx3">RIGHT BOX</div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+</html>
+<script>
+  async function makeRequest() {
+    try {
+      let res = await fetch("https://restcountries.eu/rest/v2/all");
+      let data = await res.json();
+      // data.forEach(({name,languages:[{name:lang}]}) => {
+      // console.log(country.name,country.capital);
+      // step1) figure out datatype
+      // mymic the structure
+      //console.log(name,lang);
+
+      // });
+      data.forEach(({ name, languages }) => {
+        console.log(name, languages);
+      });
+    } catch (err) {
+      console.log("error", err);
+    }
+  }
+  makeRequest();
+</script>

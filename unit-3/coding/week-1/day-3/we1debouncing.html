@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      input {
+        width: 200px;
+        margin-top:400px;
+        margin-left: 450px;
+      }
+      #movies {
+        height: 200px;
+        width: 200px;
+        border: 1px solid black;
+        border-top: none;
+        overflow: scroll;
+      }
+    </style>
+  </head>
+  <body>
+    <input type="text" oninput="throttleFunction()" id="query" />
+    <div id="movies"></div>
+  </body>
+</html>
+<script>
+  let movies_div = document.getElementById("movies");
+  var timerId;
+  async function searchMovies() {
+    try {
+      let query = document.getElementById("query").value;
+    //  consol.log
+      if (query.length <= 2){ 
+          return false;
+      }
+
+      let res = await fetch(
+        `http://www.omdbapi.com/?s=${query}&apikey=cfc41090`
+      );
+      let data = await res.json();
+      return data.Search;
+    } catch (err) {
+      console.log("error", err);
+    }
+  }
+  //     async function throttleFunction(){
+  //        // console.log(searchMovies());
+
+  //      let movies = await searchMovies();
+  //      appendMovies(movies);
+  //    }
+  function throttleFunction() {
+    //1...User made reqwuest (ave)
+    //2...making api request
+    //3.user typed more letters (aveng)
+    //4 .Make an api request aven,aveng
+    // with setTimeout ,continuous request (making it  after 2 sec)
+    if (timerId) {
+      return false;
+    }
+
+    timerId = setTimeout(() => {
+      main();
+      timerId = undefined;
+    }, 2000);
+    console.log("timerid", timerId);
+  }
+
+  function appendMovies(d) {
+    d.forEach(({ Title }) => {
+      let p = document.createElement("p");
+      p.innerText = Title;
+      movies_div.append(p);
+    });
+  }
+  async function main() {
+    // console.log(searchMovies());
+
+    let movies = await searchMovies();
+    appendMovies(movies);
+  }
+</script>

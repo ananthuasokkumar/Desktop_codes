@@ -1,0 +1,119 @@
+<!DOCTYPE>
+<html>
+    <head>
+        <title>Colorful List</title>
+        <style>
+            body {
+                background-color: black;
+            }
+            #container {
+                width: 40%;
+                height: 480px;
+                background-color: white;
+                margin-left: 30%;
+                margin-top: 70px;
+            }
+            #container > div {
+                height: 50px;
+                width: 90%;
+                margin-left: 5%;
+                border: 1px solid rgb(197, 197, 197);
+            }
+            #container > div > p {
+                padding: 0px 30px 10px 20px;
+                font-family: sans-serif;
+                /* font-weight: bold; */
+            }
+            #container > div:first-child > p {
+                color: rgb(155, 153, 153);
+            }
+            #container > div:first-child {
+                border-top-left-radius: 5px;
+                border-top-right-radius: 5px;
+            }
+            
+            #container > div:nth-child(2) {
+                background-color: rgb(173, 225, 238);
+            }
+            #container > div:nth-child(3) {
+                background-color: rgb(230, 230, 230);
+            }
+            #container > div:nth-child(4) {
+                background-color: rgb(186, 236, 186);
+            }
+            #container > div:nth-child(5) {
+                background-color: rgb(241, 194, 202);
+            }
+            #container > div:nth-child(6) {
+                background-color: rgb(248, 243, 169);
+            }
+            #container > div:nth-child(7) {
+                background-color: rgb(179, 230, 243);
+            }
+            #container > div:nth-child(8) {
+                background-color: rgb(229, 239, 241);
+            }
+            #container > div:nth-child(9) {
+                background-color: rgb(188, 189, 189);
+                border-bottom-left-radius: 5px;
+                border-bottom-right-radius: 5px;
+            }
+            #container > div:nth-child(2) > p {
+                color: rgb(57, 57, 235);
+            }
+            #container > div:nth-child(3) > p {
+                color: rgb(91, 91, 92);
+            }
+            #container > div:nth-child(4) > p {
+                color: rgb(39, 172, 34);
+            }
+            #container > div:nth-child(5) > p {
+                color: rgb(156, 14, 50);
+            }
+            #container > div:nth-child(6) > p {
+                color: rgb(133, 131, 10);
+            }
+            #container > div:nth-child(7) > p {
+                color: rgb(9, 109, 134);
+            }
+            #container > div:nth-child(8) > p {
+                color: rgb(179, 179, 182);
+            }
+            #container > div:nth-child(9) > p {
+                color: rgb(75, 75, 75);
+            }
+
+        </style>
+    </head>
+    <body>
+        <div id="container">
+            <div>
+                <p>Dapibus ac facilisis in</p>
+            </div>
+            <div>
+                <p>This a primary list group item</p>
+            </div>
+            <div>
+                <p>This is a secondary list group item</p>
+            </div>
+            <div>
+                <p>This is a success list group item</p>
+            </div>
+            <div>
+                <p>This is a danger group item</p>
+            </div>
+            <div>
+                <p>This is a warning list group item</p>
+            </div>
+            <div>
+                <p>This is a info list group item</p>
+            </div>
+            <div>
+                <p>This is a light list group item</p>
+            </div>
+            <div>
+                <p>This is a dark list group item</p>
+            </div>
+        </div>
+    </body>
+</html>

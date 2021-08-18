@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .container {
+        display: grid;
+        grid-template: 70px 600px/ (1fr 2fr);
+        gap: 25px;
+        grid-template-areas: "a a a";
+      }
+      .bx1 {
+        background-color: red;
+      }
+      .bx2 {
+        background-color: limegreen;
+      }
+      .bx3 {
+        background-color: teal;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="bx1"></div>
+      <div class="bx2"></div>
+      <div class="bx3"></div>
+    </div>
+  </body>
+</html>

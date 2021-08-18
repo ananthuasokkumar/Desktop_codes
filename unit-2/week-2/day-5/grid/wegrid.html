@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        background-color: black;
+      }
+      .container {
+        display: grid;
+        gap: 15px;
+        width: 60%;
+        margin: 100px auto;
+        background-color: white;
+        grid-template: repeat(4, 100px) / repeat(4, 100px);
+        grid-template-areas:
+          "a b c d"
+          "e f g ."
+          "h i . ."
+          "j . . .";
+        justify-content: center;
+        padding: 100px 0px;
+      }
+      .bx1 {
+        grid-area: a;
+        background-color: teal;
+        border-radius: 5px;
+      }
+      .bx2 {
+        grid-area: b;
+        background-color: teal;
+        border-radius: 5px;
+      }
+      .bx3 {
+        grid-area: c;
+        background-color: teal;
+        border-radius: 5px;
+      }
+      .bx4 {
+        grid-area: d;
+        background-color: teal;
+        border-radius: 5px;
+      }
+      .bx5 {
+        grid-area: e;
+        background-color: teal;
+        border-radius: 5px;
+      }
+      .bx6 {
+        grid-area: f;
+        background-color: teal;
+        border-radius: 5px;
+      }
+      .bx7 {
+        grid-area: g;
+        background-color: teal;
+        border-radius: 5px;
+      }
+      .bx8 {
+        grid-area: h;
+        background-color: teal;
+        border-radius: 5px;
+      }
+      .bx9 {
+        grid-area: i;
+        background-color: teal;
+        border-radius: 5px;
+      }
+      .bx10 {
+        grid-area: j;
+        background-color: teal;
+        border-radius: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="bx1"></div>
+      <div class="bx2"></div>
+      <div class="bx3"></div>
+      <div class="bx4"></div>
+      <div class="bx5"></div>
+      <div class="bx6"></div>
+      <div class="bx7"></div>
+      <div class="bx8"></div>
+      <div class="bx9"></div>
+      <div class="bx10"></div>
+    </div>
+  </body>
+</html>

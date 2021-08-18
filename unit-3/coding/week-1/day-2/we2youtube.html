@@ -136,6 +136,7 @@
   }
 
   async function homeVideos() {
+    // we can use &charts=mostpopular or location property.
     try {
       let res = await fetch(
         `https://youtube.googleapis.com/youtube/v3/search?order=viewCount&key=AIzaSyBK_1UBD8FrJ57f44pcIa_fA6TmVfllrXg&maxResults=20&regionCode=IN`

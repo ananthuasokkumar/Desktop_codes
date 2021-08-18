@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dice Game</title>
+    <style>
+      .container {
+        display: grid;
+        width: 60%;
+        margin: 40px 20%;
+        grid-template: repeat(5, 1fr) / repeat(4, 50px);
+        grid-template-areas:
+          ". . . . ."
+          "c c c c c"
+          ". a a a ."
+          ". b b b ."
+          ". . . . .";
+        justify-content: center;
+        background-color: red;
+      }
+      .roll {
+        grid-area: a;
+        padding: 60px 0px;
+        background-color: white;
+        text-align: center;
+        font-size: 50px;
+        font-weight: 900;
+      }
+      .play {
+        grid-area: b;
+        padding: 50px 0px;
+        background-color: black;
+        color: white;
+        text-align: center;
+        font-size: 20px;
+      }
+      h1 {
+        grid-area: c;
+        padding: 250px auto;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>ROLL TO WIN!!!</h1>
+      <div class="roll" id="rol">##</div>
+      <div class="play" id="play1">Throw Dice</div>
+    </div>
+  </body>
+</html>
+<script>
+  function roll() {
+    var random = Math.floor(Math.random() * 6) + 1;
+    if (random == 1) {
+      document.querySelector(".roll").style.color = "red";
+      document.querySelector(".roll").textContent = random;
+      document.querySelector(".container").style.backgroundColor = "red";
+    } else if (random == 2) {
+      document.querySelector(".roll").style.color = "pink";
+      document.querySelector(".roll").textContent = random;
+      document.querySelector(".container").style.backgroundColor = "pink";
+    } else if (random == 3) {
+      document.querySelector(".roll").style.color = "blue";
+      document.querySelector(".roll").textContent = random;
+      document.querySelector(".container").style.backgroundColor = "blue";
+    } else if (random == 4) {
+      document.querySelector(".roll").style.color = "brown";
+      document.querySelector(".roll").textContent = random;
+      document.querySelector(".container").style.backgroundColor = "brown";
+    } else if (random == 5) {
+      document.querySelector(".roll").style.color = "cyan";
+      document.querySelector(".roll").textContent = random;
+      document.querySelector(".container").style.backgroundColor = "cyan";
+    } else if (random == 6) {
+      document.querySelector(".roll").style.color = "green";
+      document.querySelector(".roll").textContent = random;
+      document.querySelector(".container").style.backgroundColor = "green";
+    }
+  }
+  document.getElementById("play1").addEventListener("click", roll);
+  // console.log(document.querySelector(".roll"));
+  // console.log("hwelo");
+</script>

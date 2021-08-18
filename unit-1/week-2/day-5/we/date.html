@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title> First Name </title>
+<head/>
+<body>
+
+  <div> Select the day </div>
+  <select name=“days” id=“days”>
+
+
+  <script>
+    function start() {
+      var count = parseInt(prompt(“Enter the number of days for this”, “0"));
+
+      var result = “”;
+      for (var i = 1; i <= count; i += 1)
+        result = result + “<option value=” + i + “> Day” + i + “</option>”;
+
+      document.getElementById(“days”).innerHTML = result;
+    }
+
+    start()
+  </script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Prison Security System</h1>
+<!-- 
+    <button onclick="showAlert('Main Door Breach')" > Main Door Breach</button>
+    <button onclick="showAlert('run,riot')">Prison Riot </button>
+
+    <button onclick="showAlert('Abrakadabra')">Magic button</button>
+    <button onclick="showAlert('Excape,run')">prison excape </button>
+    <button onclick="showAlert('Disney,land')">Wonderland </button> -->
+<input type="text" id="custom_msg" placeholder="Enter custom alert">
+<button onclick="showCustomAlert()">show message</button>
+
+<div id="message"></div>
+
+</body>
+</html>
+<script>
+
+    function showAlert(x){
+        alert(x)
+    }
+    function showCustomAlert(){
+      var msg=document.getElementById("custom_msg").value;
+      var div = document.getElementById("message");
+     // var h1=sdfasf;
+     //  div.appendChild(h1);
+     var h1=document.createElement("h1")
+     h1.testContent=msg;
+     div.appendChild(h1);
+    //   div.innerHTML=msg;
+    }
+</script>

@@ -1,0 +1,55 @@
+<!-- var cat = { name: cat };
+var lion = Object.create(cat);
+var tiger = Object.create(cat);
+var leopard = Object.create(cat); -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+</html>
+<script>
+  //   const cat = {
+  //     type: "cat",
+  //     legs: 4,
+  //     claws: "sharp",
+  //     tail: true,
+  //     food: "carnivorous",
+  //   };
+  //   const tiger = Object.create(cat);
+  //   tiger.canClimb = false;
+  //   console.log(tiger);
+  // const tiger={
+  //     name:'tiger',
+  //     canClimb:false
+  // }
+
+  //   const tiger = Object.setPrototypeOf(
+  //     {
+  //       name: "tiger",
+  //       canClimb: false,
+  //     },
+  //     cat
+  //   );
+  //   console.log(tiger);
+  //console.log(Object.getPrototypeOf(tiger));
+  function iphone13() {
+    this.name = "iphone 13";
+    this.year = 2022;
+    this.factory = "India";
+  }
+  const i1 = new iphone13();
+  iphone13.prototype.buildFaceId = function () {
+    console.log("face id installed");
+  };
+  iphone13.prototype.add5g = function () {
+    this.five_G = true;
+  };
+  i1.buildFaceId();
+  iphone13.prototype.camera = "20MP";
+  console.log(i1);
+</script>

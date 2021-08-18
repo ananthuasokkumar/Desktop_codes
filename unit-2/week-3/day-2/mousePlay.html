@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    #container {
+      width: 50%;
+      height: 300px;
+      border-radius: 10px;
+      background-color: skyblue;
+      margin: auto;
+    }
+    button {
+      height: 40px;
+      width: 20%;
+      background-color: brown;
+      margin: 250px;
+      border-radius: 5px;
+    }
+  </style>
+  <body>
+    <div id="container">
+      <button id="submit">submit</button>
+    </div>
+  </body>
+</html>
+<script>
+  var contain = document.getElementById("container");
+  function changebgc() {
+    var submit = document.getElementById("submit");
+    submit.style.backgroundColor = "green";
+  }
+  function retainbgc() {
+    var submit = document.getElementById("submit");
+    submit.style.backgroundColor = "brown";
+  }
+  contain.addEventListener("mouseover", changebgc);
+
+  contain.addEventListener("mouseleave", retainbgc);
+</script>

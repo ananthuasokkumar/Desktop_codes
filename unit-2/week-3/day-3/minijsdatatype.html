@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Javascript learning app</title>
+  </head>
+  <body></body>
+</html>
+<script>
+  var btnObj = document.createElement("button");
+  btnObj.textContent = "Objects";
+  document.body.append(btnObj);
+
+  var btnArr = document.createElement("button");
+  btnArr.textContent = "Arrays";
+  document.body.append(btnArr);
+
+  var btnFunc = document.createElement("button");
+  btnFunc.textContent = "Functions";
+  document.body.append(btnFunc);
+
+  var btnStr = document.createElement("button");
+  btnStr.textContent = "Strings";
+  document.body.append(btnStr);
+
+  var btnNum = document.createElement("button");
+  btnNum.textContent = "Numbers";
+  document.body.append(btnNum);
+
+  var btnUnd = document.createElement("button");
+  btnUnd.textContent = "Undefined";
+  document.body.append(btnUnd);
+
+  var div = document.createElement("div");
+  var divobject = document.createElement("div");
+  var h1 = document.createElement("h1");
+  var ul = document.createElement("ul");
+  var li1 = document.createElement("li");
+  var li2 = document.createElement("li");
+  var li3 = document.createElement("li");
+  var li4 = document.createElement("li");
+  var li5 = document.createElement("li");
+
+  function object() {
+    h1.textContent = "Object";
+    li1.textContent = "Javascript is Worlds most famous programming language";
+    li2.textContent = "javascript considers everything inernally as objects";
+    li3.textContent =
+      "In js there are two types of data types,primitive and non-primitive";
+    li4.textContent =
+      "Primitive datatypes are numbers ,strings,undefined,null and booleans";
+    li5.textContent = "Non-primitive are objects and arrays";
+    ul.append(li1, li2, li3, li4, li5);
+    divobject.append(h1, ul);
+    div.append(divobject);
+    document.body.append(div);
+    div.style.backgroundColor = "green";
+    //div.innerHTML = null;
+  }
+  function array1() {
+    h1.textContent = "Arrays";
+    li1.textContent = "Javascript is Worlds most famous programming language";
+    li2.textContent = "javascript considers everything inernally as objects";
+    li3.textContent =
+      "In js there are two types of data types,primitive and non-primitive";
+    li4.textContent =
+      "Primitive datatypes are numbers ,strings,undefined,null and booleans";
+    li5.textContent = "Non-primitive are objects and arrays";
+    ul.append(li1, li2, li3, li4, li5);
+    divobject.append(h1, ul);
+    div.append(divobject);
+    document.body.append(div);
+    div.style.backgroundColor = "red";
+    //div.innerHTML = null;
+  }
+  function funct() {
+    h1.textContent = "Function";
+    li1.textContent = "Javascript is Worlds most famous programming language";
+    li2.textContent = "javascript considers everything inernally as objects";
+    li3.textContent =
+      "In js there are two types of data types,primitive and non-primitive";
+    li4.textContent =
+      "Primitive datatypes are numbers ,strings,undefined,null and booleans";
+    li5.textContent = "Non-primitive are objects and arrays";
+    ul.append(li1, li2, li3, li4, li5);
+    divobject.append(h1, ul);
+    div.append(divobject);
+    document.body.append(div);
+    div.style.backgroundColor = "cyan";
+    //div.innerHTML = null;
+  }
+  function Str() {
+    h1.textContent = "Strings";
+    li1.textContent = "Javascript is Worlds most famous programming language";
+    li2.textContent = "javascript considers everything inernally as objects";
+    li3.textContent =
+      "In js there are two types of data types,primitive and non-primitive";
+    li4.textContent =
+      "Primitive datatypes are numbers ,strings,undefined,null and booleans";
+    li5.textContent = "Non-primitive are objects and arrays";
+    ul.append(li1, li2, li3, li4, li5);
+    divobject.append(h1, ul);
+    div.append(divobject);
+    document.body.append(div);
+    div.style.backgroundColor = "orange";
+    //div.innerHTML = null;
+  }
+  function Num() {
+    h1.textContent = "Numbers";
+    li1.textContent = "Javascript is Worlds most famous programming language";
+    li2.textContent = "javascript considers everything inernally as objects";
+    li3.textContent =
+      "In js there are two types of data types,primitive and non-primitive";
+    li4.textContent =
+      "Primitive datatypes are numbers ,strings,undefined,null and booleans";
+    li5.textContent = "Non-primitive are objects and arrays";
+    ul.append(li1, li2, li3, li4, li5);
+    divobject.append(h1, ul);
+    div.append(divobject);
+    document.body.append(div);
+    div.style.backgroundColor = "limegreen";
+    //div.innerHTML = null;
+  }
+  function und() {
+    h1.textContent = "Undefined";
+    li1.textContent = "Javascript is Worlds most famous programming language";
+    li2.textContent = "javascript considers everything inernally as objects";
+    li3.textContent =
+      "In js there are two types of data types,primitive and non-primitive";
+    li4.textContent =
+      "Primitive datatypes are numbers ,strings,undefined,null and booleans";
+    li5.textContent = "Non-primitive are objects and arrays";
+    ul.append(li1, li2, li3, li4, li5);
+    divobject.append(h1, ul);
+    div.append(divobject);
+    div.style.backgroundColor = "yellow";
+    document.body.append(div);
+    //div.innerHTML = null;
+  }
+  btnObj.addEventListener("click", object);
+  div.innerHTML = null;
+  btnUnd.addEventListener("click", und);
+  div.innerHTML = null;
+  btnNum.addEventListener("click", Num);
+  div.innerHTML = null;
+  btnStr.addEventListener("click", Str);
+  div.innerHTML = null;
+  btnFunc.addEventListener("click", funct);
+  div.innerHTML = null;
+  btnArr.addEventListener("click", array1);
+</script>

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        background-color: plum;
+        font-family: "Pacifico", cursive;
+        height: 100vh;
+      }
+      .container {
+        display: grid;
+        height: 40px;
+        width: 95%;
+        /* margin: 20px 20px; */
+        grid-template: 30px / repeat(5, 200px);
+        gap: 50px;
+        grid-template-areas: "d . a b c";
+        background-color: rgb(125, 103, 223);
+        align-items: center;
+        justify-content: center;
+        padding: 20px 30px;
+
+        border-radius: 7px;
+      }
+      .bx1 {
+        grid-area: a;
+        background-color: rgb(18, 218, 61);
+        font-weight: 900;
+        margin: auto 40px;
+        padding: 10px 10px;
+        border-radius: 5px;
+      }
+      .bx2 {
+        grid-area: b;
+        background-color: rgb(18, 218, 61);
+        font-weight: 900;
+        margin: auto 40px;
+        padding: 10px 10px;
+        border-radius: 5px;
+      }
+      .bx3 {
+        grid-area: c;
+        background-color: rgb(18, 218, 61);
+        font-weight: 900;
+        margin: auto 40px;
+        padding: 10px 10px;
+        border-radius: 5px;
+      }
+      .container > img {
+        grid-area: d;
+        border-radius: 5px;
+        height: 80px;
+        width: 90px;
+      }
+      .slideshow {
+        height: 400px;
+        width: 95%;
+        margin-bottom: 20px;
+        margin-left: 2.5%;
+        align-items: center;
+      }
+      img {
+        height: 300px;
+        object-fit: fill;
+      }
+      .gridShow {
+        display: grid;
+        grid-template-columns: repeat(3, 22%);
+        gap: 5%;
+        justify-content: space-evenly;
+        margin-top: 50px;
+        /* //height: 80vh; */
+        font-weight: 700;
+        /* border: 1px solid black; */
+        margin-bottom: 100px;
+      }
+      img {
+        width: 95%;
+        height: 200px;
+        margin-top: 10px;
+        border-radius: 5px;
+      }
+      .movdiv {
+        border: 1px solid rgb(196, 22, 94);
+        align-items: center;
+        text-align: center;
+        background-color: rgb(228, 209, 212);
+        height: 300;
+        border-radius: 5px;
+      }
+      .movdiv:hover {
+        transform: scale(1.2);
+        box-shadow: 5px 5px pink;
+      }
+      #formid {
+        height: 400px;
+        width: 400px;
+        border: 1px solid limegreen;
+        display: flex;
+        flex-direction: column;
+        margin: 70px 0px 0% 40%;
+        text-align: center;
+      }
+      #formid input {
+        height: 40px;
+        width: 200px;
+        margin-top: 20px;
+        /* margin-left: 25%; */
+      }
+      #formid input:last-child {
+        background-color: rgb(18, 218, 61);
+        height: 30px;
+        width: 15opx;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <img
+        src="https://deadline.com/wp-content/uploads/2057/10/movies-everywhere-logo-featured-black.jpg"
+      />
+      <h2>Movies Anywhere</h2>
+      <button class="bx1" onclick="goToHome()">Home</button>
+      <button class="bx2" onclick="goToLogin()">Login</button>
+      <button class="bx3" onclick="goToSignup()">Signup</button>
+    </div>
+    <div id="formid">
+      <h2>Fill to Signup</h2>
+      <form id="form" onsubmit="signup(event)">
+        <input type="text" placeholder="Name" id="name" />
+        <input type="number" placeholder="Contact Number" id="num" />
+        <input type="text" placeholder="email" id="email" />
+        <input type="password" placeholder="password" id="pass" />
+        <input type="submit" />
+      </form>
+    </div>
+  </body>
+</html>
+<script src="signup.js"></script>

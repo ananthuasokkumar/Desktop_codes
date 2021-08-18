@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .container {
+        display: grid;
+        grid-template: 100% / repeat(6, 1fr);
+        grid-template-areas: ". . a a . b";
+        background-color: powderblue;
+      }
+      .id {
+        grid-area: b;
+        border: 1px solid red;
+        background-color: plum;
+        text-align: center;
+        font-size: 20px;
+        justify-content: center;
+      }
+      img {
+        grid-area: a;
+        width: 85%;
+      }
+    </style>
+  </head>
+  <body>
+    <select name="menuItems" id="food">
+      <option value="Sandwitch">Sandwitch</option>
+      <option value="Chicken Kebab">Chicken Kebab</option>
+      <option value="Coca Cola">Coca Cola</option>
+      <option value="French Fries">French Fries</option>
+      <option value="Pop Corn">Pop Corn</option>
+    </select>
+
+    <button onclick="placeOrder()">Order Food</button>
+  </body>
+</html>
+<script src="macDonalds.js"></script>

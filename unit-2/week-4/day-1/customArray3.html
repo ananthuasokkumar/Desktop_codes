@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+</html>
+<script>
+  //constructor function
+  function array123(x) {
+    this.length = arguments.length;
+    for (let i = 0; i < this.length; i++) {
+      this[`${i}`] = arguments[i];
+    }
+  }
+
+  const arr = new array123(1, 2, 3, 4, 5);
+  //push function
+  function Pusher(x) {}
+  array123.prototype.Pusher = function (x) {
+    let index = this.length;
+    this[index] = x;
+    this.length++;
+  };
+
+  arr.Pusher(23);
+  arr.Pusher(45);
+  //pop function method
+  array123.prototype.Popper = function () {
+    let index = this.length - 1;
+    delete this[index];
+    this.length--;
+  };
+
+  //   arr.Popper();
+  //   arr.Popper();
+  //   arr.Popper();
+  // console.log(arr);
+  //reverse
+  array123.prototype.reverse = function () {
+    let index = this.length - 1;
+    for (let i = 0; i < index; i++) {
+      this[index] = this[index] + this[`${i}`];
+      this[`${i}`] = this[index] - this[`${i}`];
+      this[index] = this[index] - this[`${i}`];
+
+      index--;
+    }
+  };
+  arr.reverse();
+  Object.defineProperty(arr, "length", {
+    enumerable: false,
+  });
+  console.log(arr);
+  //array format
+  array123.prototype.arrayformat = function () {
+    let array1 = [];
+    for (key in arr) {
+      array1.push(arr[key]);
+      // console.log(key);
+    }
+    Object.defineProperty(arr, length, {
+      enumerable: false,
+    });
+    console.log(array1);
+  };
+
+  //arr.arrayformat();
+  ///first element
+  array123.prototype.firstElement = function () {
+    let index = 0;
+    console.log(this[index]);
+  };
+  // arr.firstElement();
+</script>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #container {
+        display: grid;
+        width: 800px;
+        grid-template: repeat(3, 100px) / repeat(5, 100px);
+        grid-gap: 15px;
+        margin: 100px auto;
+        grid-template-areas:
+          "a b b b c"
+          "d d d e f"
+          "g h i i i";
+        justify-content: center;
+        text-align: center;
+      }
+      /* 
+      .box1 {
+        background-color: aqua;
+        text-align: center;
+        padding: 10px;
+        border-radius: 10px;
+      } */
+      .id1 {
+        grid-area: a;
+        padding: 13px 0px;
+        background-color: teal;
+        border-radius: 7px;
+      }
+      .id2 {
+        grid-area: b;
+        padding: 13px 0px;
+        background-color: teal;
+        border-radius: 7px;
+      }
+      .id3 {
+        grid-area: c;
+        padding: 13px 0px;
+        background-color: teal;
+        border-radius: 7px;
+      }
+      .id4 {
+        grid-area: d;
+        padding: 13px 0px;
+        background-color: teal;
+        border-radius: 7px;
+      }
+      .id5 {
+        grid-area: e;
+        padding: 13px 0px;
+        background-color: teal;
+        border-radius: 7px;
+      }
+      .id6 {
+        grid-area: f;
+        padding: 13px 0px;
+        background-color: teal;
+        border-radius: 7px;
+      }
+      .id7 {
+        grid-area: g;
+        padding: 13px 0px;
+        background-color: teal;
+        border-radius: 7px;
+      }
+      .id8 {
+        grid-area: h;
+        padding: 13px 0px;
+        background-color: teal;
+        border-radius: 7px;
+      }
+      .id9 {
+        grid-area: i;
+        padding: 13px 0px;
+        background-color: teal;
+        border-radius: 7px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container" class="item1">
+      <div class="id1"></div>
+      <div class="id2"></div>
+      <div class="id3"></div>
+      <div class="id4"></div>
+      <div class="id5"></div>
+      <div class="id6"></div>
+      <div class="id7"></div>
+      <div class="id8"></div>
+      <div class="id9"></div>
+    </div>
+  </body>
+</html>
+
+<script></script>

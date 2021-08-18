@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Instamojo</title>
+        <style>
+            body {
+                background-color: black;
+                font-family: 'Roboto', sans-serif;
+            }
+            #container {
+                width: 70%;
+                height: 620px;
+                background-color: whitesmoke;
+                margin-left: 15%;
+            }
+            .div1 {
+                width: 100%;
+                height: 350px;
+                background-color: rgb(230, 230, 230);
+                text-align: center;
+            }
+            .div1 > div > h1, .div1 > div > p {
+                color: rgb(4, 38, 110);
+            }
+            .div1 > div > h1 {
+                padding-top: 30px;
+            }
+            .horizontal {
+                width: 80px;
+                height: 3px;
+                background-color: rgb(4, 38, 110);
+                border-radius: 2px;
+                margin-left: 46%;
+            }
+            .subDiv1 {
+                height: 150px;
+                width: 90%;
+                background-color: whitesmoke;
+                margin-left: 5%;
+            }
+            .text1 {
+                height: 150px;
+                width: 23%;
+                /* border: 1px solid black; */
+                text-align: left;
+                float: left;
+                margin-left: 10px;
+            }
+            /* .text1 > div:last-child {
+                margin-right: 0px;
+            } */
+            .text1 >p {
+                margin-left: 10px;
+            }
+            .text1 >p:first-child {
+                color: gray;
+                font-size: 15px;
+            }
+            .logo {
+                color: rgb(2, 2, 119);
+                margin-top: 10px;
+                margin-left: 10px;
+            }
+            .logo ~ p {
+                color: red;
+                padding-top: 0px;
+            }
+            .lightText, .lightText ~ p {
+                color: rgb(73, 72, 72);
+                font-size: 15px
+            }
+            .div2 {
+                background-color: whitesmoke;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="container">
+            <div class="div1">
+                <div>
+                    <h1>Compare Pricing</h1>
+                    <div class="horizontal"></div>
+                    <p>Instamojo's overall costs compared to other modern platforms & traditional gateways</p>
+                </div>
+                <div class="subDiv1">
+                    <div class="text1">
+                        <p class="lightText">FEES & OTHER CHARGES</p>
+                        <P>Setup Fee</P>
+                        <p>Annual Maintenance</p>
+                        <p>Minimum Commitment</p>
+                    </div>
+                    <div class="text1">
+                        <h3 class="logo">instamojo</h3>
+                        <p>Free</p>
+                        <p>Free</p>
+                        <p>No Commitment</p>
+                    </div>
+                    <div class="text1">
+                        <p class="lightText">MODERN PLATFORMS</p>
+                        <P>Rs0 to Rs10,000/year</P>
+                        <p>Rs10,000 to Rs25,000/year</p>
+                        <p>Varies</p>
+                    </div>
+                    <div class="text1">
+                        <p class="lightText">TRADITIONAL GATEWAYS</p>
+                        <P>Rs25,000/year</P>
+                        <p>Rs10,000 to Rs25,000/year</p>
+                        <p>Upto Rs1,00,000/month</p>
+                    </div>
+                </div>
+            </div>
+            <div class="div1 div2">
+                <div>
+                    <h1>No Hidden Costs</h1>
+                    <div class="horizontal"></div>
+                    <p>Cost of time and effort spent increases hidden costs. But not on mojo</p>
+                </div>
+                <div class="subDiv1 subDiv2">
+                    <div class="text1">
+                        <p class="lightText">COSTS</p>
+                        <P>Time to Get Started</P>
+                        <p>Developer Costs for Integration</p>
+                        <p>Legal Costs of Agreements</p>
+                    </div>
+                    <div class="text1">
+                        <h3 class="logo">instamojo</h3>
+                        <p>3-5 minutes</p>
+                        <p>Not Needed</p>
+                        <p>Not Needed</p>
+                    </div>
+                    <div class="text1">
+                        <p class="lightText">MODERN PLATFORMS</p>
+                        <P>1-4 weeks</P>
+                        <p>Rs1 Lakh+</p>
+                        <p>Varies</p>
+                    </div>
+                    <div class="text1">
+                        <p class="lightText">TRADITIONAL GATEWAYS</p>
+                        <P>4-8 weeks</P>
+                        <p>Rs1 Lakh+</p>
+                        <p>Rs1 Lakh+</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

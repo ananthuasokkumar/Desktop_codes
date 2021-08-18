@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #slideshow {
+            padding: 2%;
+        }
+        #slideshow img {
+            height: 300px;
+            width: 100%;
+            object-fit: cover;
+        }
+        #students {
+            display: grid;
+            grid-template-columns: repeat(3, 30%);
+            grid-gap: 3%;
+            margin: 3%;
+        }
+        #students div {
+            display: grid;
+            justify-items: center;
+        }
+        #students img {
+            width: 30%;
+        }
+    </style>
+</head>
+<body>
+    <h1>Home Page</h1>
+
+    <div id="slideshow"></div>
+    <button onclick="sortLH()">Low to High</button>
+    <button onclick="sortHL()">High to Low</button>
+    <div id="students"></div>
+</body>
+</html>
+<script src="home.js"></script>

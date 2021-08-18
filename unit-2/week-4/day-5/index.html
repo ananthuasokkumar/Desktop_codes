@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #message {
+            width: 200px;
+            height: 200px;
+            background-color: peachpuff;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Vaccine Booth Alert System</h1>
+    <input type="text" id="name" />
+    <input type="text" id="age" />
+    <button onclick="register()">Register for Vaccine</button>
+</body>
+</html>
+<script>
+
+    let queue = ['Dicaprio', 'Ronaldo', 'Messi', 'Elon', 'Neymar'];
+    
+    function register() {
+        const name = document.getElementById('name').value;
+        const age = document.getElementById("age").value;
+        let message = `${name} your registration is done. Wait for your turn!`;
+        alert(message);
+        
+        if(age >= 60) {
+            queue.unshift(name);
+        }
+        else {
+            queue.push(name);
+        }
+        
+
+        let promise = new Promise(function(resolve, reject) {
+            setInterval(function() {                            // is like receptionist checking whether the turn of input value has come in every 1000 ms
+                if (queue[0] === name) {
+                    resolve(`${name}, go take a jab now`);
+                }
+            }, 4000);   
+        });
+
+        promise.then(function(res) {
+            alert(res);
+        })
+    }
+
+    let vaccineCount = 4;
+    let remainingMem = queue.length - vaccineCount + 1;
+    function startVaccination() {        // every person in the queue is getting vaccinated for every 3000ms
+        let div = document.createElement("div");
+        let msg = document.createElement("p");
+        div.setAttribute("id", "message");
+        
+        // if(queue.length != 0) {
+        //     div.innerHTML = null;
+        //     queue.shift();
+        //     
+        // }  
+        queue.shift();
+        vaccineCount--;
+        remainingMem = queue.length - vaccineCount;
+        if(vaccineCount == 0) {
+            clearInterval(interval);
+            alert("Vaccine out of stock. Visit tomorrow!!");
+            // console.log(`The people remaining are ${remainingMem}`);
+            msg.innerText = `${remainingMem} people are still in queue`;
+            div.append(msg);
+            document.body.append(div);
+            
+        }
+       
+        if(queue.length === 0) {          // if the only member left in the queue is the input value, then the turn of that person comes.
+            clearInterval(interval);
+        }
+        console.log("queue:", queue);
+    }
+
+    // startVaccination();
+    var interval = setInterval(startVaccination, 3000)
+
+</script>

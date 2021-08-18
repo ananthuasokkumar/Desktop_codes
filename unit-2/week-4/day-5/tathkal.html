@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Tatkal alert system</h1>
+
+    <button onclick="checkAvailabilty()">Notify train</button>
+  </body>
+</html>
+<script>
+  let MtoG = [
+    "Dicaprio",
+    "Ronaldo",
+    "Dhoni",
+    "Lebron",
+    "Chettri",
+    "Rahul Gandhi",
+    "Babubhaiya",
+    "jethalal",
+  ];
+
+  let BtoG = [
+    "Dicaprio",
+    "Ronaldo",
+    "Dhoni",
+    "Lebron",
+    "Chettri",
+    "Rahul Gandhi",
+    "Babubhaiya",
+    "jethalal",
+  ];
+
+  let PtoG = [
+    "Dicaprio",
+    "Ronaldo",
+    "Dhoni",
+    "Lebron",
+    "Chettri",
+    "Rahul Gandhi",
+    "Babubhaiya",
+    "jethalal",
+  ];
+
+  async function checkAvailabilty() {
+    let promise = new Promise(function (resolve, reject) {
+      setInterval(function () {
+        if (MtoG.length < 5) {
+          resolve("train 1 is available");
+        } else if (BtoG.length < 5) resolve("train 2 is available");
+        else if (PtoG.length < 5) resolve("train 3 is available");
+      }, 1000);
+    });
+
+    let res = await promise;
+
+    alert(res);
+  }
+
+  function cancelTicket() {
+    //people are ramdomly cancelling ticket
+    let cancelling_speed1 = Math.ceil(Math.random() * 5);
+    let cancelling_speed2 = Math.ceil(Math.random() * 5);
+    let cancelling_speed3 = Math.ceil(Math.random() * 5);
+
+    setTimeout(function () {
+      MtoG.pop();
+    }, cancelling_speed1 * 1000);
+
+    setTimeout(function () {
+      BtoG.pop();
+    }, cancelling_speed2 * 1000);
+
+    setTimeout(function () {
+      PtoG.pop();
+    }, cancelling_speed3 * 1000);
+    console.log(MtoG, PtoG, BtoG);
+    if (M2G.length == 4) clearInterval(interval);
+    if (B2G.length == 4) clearInterval(interval);
+    if (P2G.length == 4) clearInterval(interval);
+  }
+
+  var interval = setInterval(cancelTicket, 1000);
+</script>

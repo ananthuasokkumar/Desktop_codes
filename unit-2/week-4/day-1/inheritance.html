@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+</html>
+<script>
+  const family = {
+    houseName: "Mangal van",
+    skinTone: "skinny",
+    language: "English",
+  };
+  var grandfather = Object.create(family);
+  grandfather.name = "kiran";
+  grandfather.age = 65;
+  grandfather.bloodGrp = "O+ve";
+
+  var parent = Object.create(grandfather);
+  parent.name = "arun";
+  parent.age = 36;
+  parent.bloodGrp = "B+ve";
+
+  var me = Object.create(parent);
+  me.name = "jadu";
+  me.age = 29;
+  console.log(me.houseName); //me inherits the property houseName from family.
+
+  ////constructor function inheritance
+  function basicInfor(name, age) {
+    this.name = name;
+    this.age = age;
+  }
+
+  var chachaji = new basicInfor("raja", 88);
+  chachaji.hobies = "football";
+
+  var dada = new basicInfor("gaga", 30);
+  var son = new basicInfor("jeje", 15);
+  basicInfor.prototype.nativelanguage = "hindi";
+  basicInfor.prototype.hair = function () {
+    console.log("curly");
+  };
+  console.log(son.nativelanguage);
+</script>

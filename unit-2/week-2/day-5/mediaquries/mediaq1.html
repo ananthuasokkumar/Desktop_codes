@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        background-color: black;
+      }
+      .container {
+        display: grid;
+        width: 700px;
+        padding: 20px 10px;
+        background-color: white;
+        grid-template: 60px 100px 100px 100px / repeat(4, 150px);
+        grid-template-areas:
+          "a a a a"
+          "b b b c"
+          "b b b d"
+          "b b b e";
+        grid-gap: 15px;
+        font-size: 30px;
+        margin: 100px auto;
+        justify-content: center;
+      }
+      @media (min-width: 600px) {
+        .container {
+          display: grid;
+          width: 700px;
+          padding: 20px 10px;
+          background-color: white;
+          grid-template: repeat(5, 200px) / 200px;
+          grid-template-areas:
+            "a"
+            "b"
+            "c"
+            "d"
+            "e";
+          grid-gap: 15px;
+          font-size: 30px;
+          margin: 100px auto;
+          justify-content: center;
+        }
+      }
+      @media (min-width: 768px) {
+        .container {
+          display: grid;
+          height: 800px;
+          width: 700px;
+          padding: 20px 10px;
+          background-color: white;
+          grid-template: 70px 100px 100px 100px / repeat(3, 130px);
+          grid-template-areas:
+            "a a a"
+            "b b b"
+            "b b b"
+            "c d e";
+
+          grid-gap: 15px;
+          font-size: 30px;
+          margin: 100px auto;
+          justify-content: center;
+        }
+      }
+      @media (min-width: 1008px) {
+        .container {
+          display: grid;
+          width: 700px;
+          padding: 20px 10px;
+          background-color: white;
+          grid-template: 60px 100px 100px 100px / repeat(4, 150px);
+          grid-template-areas:
+            "a a a a"
+            "b b b c"
+            "b b b d"
+            "b b b e";
+          grid-gap: 15px;
+          font-size: 30px;
+          margin: 100px auto;
+          justify-content: center;
+        }
+      }
+      .bx1 {
+        grid-area: a;
+        background-color: yellow;
+      }
+      .bx2 {
+        grid-area: b;
+        background-color: red;
+      }
+      .bx3 {
+        grid-area: c;
+        background-color: green;
+      }
+      .bx4 {
+        grid-area: d;
+        background-color: green;
+      }
+      .bx5 {
+        grid-area: e;
+        background-color: green;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="bx1">Navigation</div>
+      <div class="bx2">Leftbox</div>
+      <div class="bx3">right box 1</div>
+      <div class="bx4">right box2</div>
+      <div class="bx5">right box3</div>
+    </div>
+  </body>
+</html>

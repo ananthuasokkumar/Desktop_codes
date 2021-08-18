@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #album {
+        display: grid;
+        padding: 5%;
+        grid-template-columns: repeat(4, 20%);
+        grid-gap: 5%;
+      }
+      img {
+        width: 70%;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Photo album</h1>
+    <input type="text" id="url" />
+    <button onclick="addImage()">addImage</button>
+
+    <div id="album"></div>
+  </body>
+</html>
+<script>
+  var album_div = document.getElementById("album");
+  function addImage() {
+    var url = document.getElementById("url").value;
+    // console.log(url);
+    var img = document.createElement("img");
+    img.setAttribute("src", url);
+    album_div.append(img);
+  }
+</script>

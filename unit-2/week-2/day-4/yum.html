@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Yum Foods</title>
+        <style>
+            body {
+                background-color: black;
+                font-family: Verdana, Geneva, Tahoma, sans-serif;
+            }
+            .container {
+                width: 70%;
+                background-color: #f0efef;
+                margin-left: 15%;
+            }
+            .div1 {
+                width: 80%;
+                height: 350px;
+                margin-left: 10%;
+                margin-bottom: 0px;
+                /* float: left; */
+            }
+            /* .div2 {
+                margin-top: 0px;
+            } */
+            .div1 > p {
+                font-size: 20px;
+                padding-top: 5px;
+                text-align: center;
+                color: rgb(63, 63, 63);
+            }
+            /* .div1 > div {
+                float: left;
+                margin: auto;
+                height: 280px;
+                width: 30%;
+            } */
+            .subDiv1 {
+                height: 280px;
+                width: 30%;
+                margin: auto;
+                float: left;
+            }
+            .imgDiv {
+                height: 280px;
+                width: 100%;
+            }
+            .imgDiv > div:nth-child(2) {
+                margin-left: 5%;
+                margin-right: 5%;
+            }
+            .bgImg {
+                height: 200px;
+                width: 100%;
+                background-image: url('https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/20190503-delish-pineapple-baked-salmon-horizontal-ehg-450-1557771120.jpg?crop=0.670xw:1.00xh;0.173xw,0&resize=480:*');
+                background-size: contain;
+            }
+            .textIcon {
+                height: 70px;
+                width: 100%;
+            }
+            .textIcon > p {
+                font-size: 12px;
+                line-height: 0.5cm;
+                float: left;
+                color: rgb(75, 75, 75);
+            }
+            .bgIcon {
+                width: 50px;
+                height: 50px;
+                border-radius: 50%;
+                margin-left: 40px;
+                margin-top: 10px;
+                float: left;
+                background-image: url('https://play-lh.googleusercontent.com/u-1_bY3B1iqi02Q_3qlg0UNJMP2NNACnvkvGqAPiWcdSbNNjwfGAv6BW64Rh3k_UNg');
+                background-size: contain;
+            }
+            .extra {
+                margin-left: 50px;
+            }
+            .bg2 {
+                height: 200px;
+                width: 100%;
+                background-image: url('https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/gettyimages-1036880806.jpg?crop=0.6666666666666666xw:1xh;center,top&resize=640:*');
+                background-size: cover;
+            }
+            .bg3 {
+                height: 200px;
+                width: 100%;
+                background-image: url('http://cdn.cnn.com/cnnnext/dam/assets/140430115517-06-comfort-foods.jpg');
+                background-size: cover;
+            }
+            .bg4 {
+                height: 200px;
+                width: 100%;
+                background-image: url('https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F19%2F2020%2F03%2F27%2F6j-QULaA-2000.jpeg');
+                background-size: cover;
+            }
+            .bg5 {
+                height: 200px;
+                width: 100%;
+                background-image: url('https://hips.hearstapps.com/ghk.h-cdn.co/assets/16/38/1474395998-ghk-0216-comfortfoodcover-meatballs.jpg?crop=0.856xw:0.571xh;0.0224xw,0.296xh&resize=640:*');
+                background-size: cover;
+            }
+            .bg6 {
+                height: 200px;
+                width: 100%;
+                background-image: url('https://www.eatwell101.com/wp-content/uploads/2016/06/best-Grilled-Chicken-Salad-.jpg');
+                background-size: cover;
+            }
+            span {
+                font-size: 10px;
+                color: gray;
+                padding-top: 0px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="div1">
+                <p>Weeknight Dinners</p>
+                <div class="imgDiv">
+                    <div class="subDiv1">
+                        <div class="bgImg"></div>
+                        <div class="textIcon">
+                            <p>Sheet Pan Honey<br>Mustard Pork Chops</p>
+                            <div class="bgIcon"></div>
+                            <span>YUMMLY</span>
+                        </div>
+                    </div>
+                    <div class="subDiv1">
+                        <div class="bg2"></div>
+                        <div class="textIcon">
+                            <p>Apricot Mustard <br>Glazed Ham with...</p>
+                            <div class="bgIcon extra"></div>
+                            <span>YUMMLY</span>
+                        </div>
+                    </div>
+                    <div class="subDiv1">
+                        <div class="bgImg, bg3"></div>
+                        <div class="textIcon">
+                            <p>Pork Milanese with <br> Cacio e Pepe Spag...</p>
+                            <div class="bgIcon"></div>
+                            <span>YUMMLY</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="div1 div2">
+                <p>Popular Now</p>
+                <div class="imgDiv">
+                    <div class="subDiv1">
+                        <div class="bgImg bg4"></div>
+                        <div class="textIcon">
+                            <p>Sheet Pan Honey<br>Mustard Pork Chops</p>
+                            <div class="bgIcon"></div>
+                            <span>YUMMLY</span>
+                        </div>
+                    </div>
+                    <div class="subDiv1">
+                        <div class="bg5"></div>
+                        <div class="textIcon">
+                            <p>Apricot Mustard <br>Glazed Ham with...</p>
+                            <div class="bgIcon extra"></div>
+                            <span>YUMMLY</span>
+                        </div>
+                    </div>
+                    <div class="subDiv1">
+                        <div class="bgImg, bg6"></div>
+                        <div class="textIcon">
+                            <p>Pork Milanese with <br> Cacio e Pepe Spag...</p>
+                            <div class="bgIcon"></div>
+                            <span>YUMMLY</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
+
+
+
+
+
+
+
+<!-- https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/gettyimages-1036880806.jpg?crop=0.6666666666666666xw:1xh;center,top&resize=640:* -->
+
+
+<!-- http://cdn.cnn.com/cnnnext/dam/assets/140430115517-06-comfort-foods.jpg -->
+
+
+<!-- https://hips.hearstapps.com/ghk.h-cdn.co/assets/16/38/1474395998-ghk-0216-comfortfoodcover-meatballs.jpg?crop=0.856xw:0.571xh;0.0224xw,0.296xh&resize=640:* -->
+
+<!-- https://www.eatwell101.com/wp-content/uploads/2016/06/best-Grilled-Chicken-Salad-.jpg -->
+
+<!-- https://dearcrissy.com/wp-content/uploads/2017/09/best-chocolate-chip-cookies-1-735x1103.jpg -->
+
+<!-- https://play-lh.googleusercontent.com/u-1_bY3B1iqi02Q_3qlg0UNJMP2NNACnvkvGqAPiWcdSbNNjwfGAv6BW64Rh3k_UNg -->
+
+
+
+

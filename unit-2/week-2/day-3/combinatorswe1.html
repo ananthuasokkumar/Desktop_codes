@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .container {
+        display: grid;
+        width: 50%;
+        margin: 100 auto;
+        background-color: white;
+        grid-template: repeat(9, 70px) / 300px 200px 300px;
+        grid-template-areas:
+          "a . b1"
+          "b . b2"
+          ". . c"
+          "d . e"
+          ". . f"
+          "g . b3"
+          "h . i"
+          "j . k"
+          "l . b4";
+      }
+      .box1 {
+        grid-area: a;
+        font-size: medium;
+      }
+
+      .box2 {
+        grid-area: b;
+        font-size: medium;
+      }
+
+      .box3 {
+        grid-area: c;
+        font-size: medium;
+      }
+
+      .box4 {
+        grid-area: d;
+        font-size: medium;
+      }
+
+      .box5 {
+        grid-area: e;
+        font-size: medium;
+      }
+
+      .box6 {
+        grid-area: f;
+        font-size: medium;
+      }
+
+      .box7 {
+        grid-area: g;
+        font-size: medium;
+      }
+
+      .box8 {
+        grid-area: h;
+        font-size: medium;
+      }
+
+      .box9 {
+        grid-area: i;
+        font-size: medium;
+      }
+
+      .box10 {
+        grid-area: j;
+        font-size: medium;
+      }
+
+      .box11 {
+        grid-area: k;
+        font-size: medium;
+      }
+
+      .box12 {
+        grid-area: l;
+        font-size: medium;
+      }
+      .box13 {
+        grid-area: b1;
+        font-size: medium;
+        background-color: black;
+      }
+      .box14 {
+        grid-area: b2;
+        font-size: medium;
+        background-color: black;
+      }
+      .box15 {
+        grid-area: b3;
+        font-size: medium;
+        background-color: black;
+      }
+      .box16 {
+        grid-area: b4;
+        font-size: medium;
+        background-color: black;
+      }
+      .container > .black {
+        background-color: black;
+      }
+      div > .box3,
+      div > .box5,
+      div > .box6,
+      div > .box9,
+      div > .box11,
+      div > .box12 {
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="box1">NAME</div>
+      <div class="box2"></div>
+      <div class="box3 black"></div>
+      <div class="box4"></div>
+      <div class="box5 black"></div>
+      <div class="box6 black"></div>
+      <div class="box7"></div>
+      <div class="box8"></div>
+      <div class="box9 black"></div>
+      <div class="box10"></div>
+      <div class="box11 black"></div>
+      <div class="box12"></div>
+      <div class="box13"></div>
+      <div class="box14"></div>
+      <div class="box15"></div>
+    </div>
+  </body>
+</html>

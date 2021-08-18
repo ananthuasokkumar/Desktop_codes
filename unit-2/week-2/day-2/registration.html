@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Registration</title>
+        <style>
+            body {
+                background-color: black;
+                font-family: sans-serif;
+            }
+            .container {
+                width: 70%;
+                height: 550px;
+                margin: 40px auto;
+                background-color: white;
+            }
+            .container > div {
+                width: 40%;
+                height: 400px;
+                margin-top: 70px;
+                /* margin: auto; */
+            }
+            #left {
+                float: left;
+                /* background-color: peachpuff; */
+                margin-left: 6%;
+            }
+            #right {
+                float: right;
+                background-color: black;
+                margin-right: 6%;
+                color: white;
+            }
+            .fields > p, .name > p {
+                font-size: 20px;
+                margin-bottom: 6px;
+            }
+            .fields > div {
+                width: 80%;
+                height: 40px;
+                border: 1px solid black;
+                background-color: white;
+            }
+            .valid {
+                color: red;
+                margin-top: 5px;
+            }
+            #left > div:last-child {
+                height: 45px;
+                width: 80%;
+                background-color: black;
+                margin-top: 30px;
+            }
+            #left > div:last-child > p {
+                color: whitesmoke;
+                text-align: center;
+                font-size: 20px;
+                padding-top: 10px;
+            }
+            .name {
+                margin-bottom: 50px;
+                margin-left: 50px;
+            }
+            .name > span {
+                font-size: 25px;
+            }
+            .right > div:first-child > p {
+                margin-top: 50px;
+            }
+            .name > h1 {
+                font-size: 45px;
+                margin-top: 0px;
+            }
+            </style>
+    </head>
+    <body>
+        <div class="container">
+            <div id="left">
+                <div class="fields">
+                    <p>NAME</p>
+                    <div></div>
+                </div>
+                <div class="fields">
+                    <p>EMAIL</p>
+                    <div></div>
+                </div>
+                <div class="fields">
+                    <p>MOBILE</p>
+                    <div></div>
+                    <p class="valid">Enter a valid mobile</p>
+                </div>
+                <div>
+                    <p>REGISTER</p>
+                </div>
+            </div>
+            <div id="right">
+                <div class="name">
+                    <p>NAME</p>
+                    <h1>MASAI</h1>
+                </div>
+                <div class="name">
+                    <p>EMAIL</p>
+                    <span>email@masaischool.com</span>
+                </div>
+                <div class="name">
+                    <p>MOBILE</p>
+                    <span>9876543210</span>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

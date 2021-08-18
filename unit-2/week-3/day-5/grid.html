@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #container {
+        display: grid;
+        width: 800px;
+        grid-template: repeat(8, 50px) / repeat(5, 50px);
+        grid-gap: 10px;
+        margin: 100px auto;
+        grid-template-areas:
+          "a . . . b"
+          "c . . . d"
+          ". e e e ."
+          ". f f f ."
+          ". g h i ."
+          ". j k l ."
+          ". m n o ."
+          ". . p . ."
+          ". q q q .";
+        justify-content: center;
+        text-align: center;
+      }
+      /* 
+      .box1 {
+        background-color: aqua;
+        text-align: center;
+        padding: 10px;
+        border-radius: 10px;
+      } */
+      .id1 {
+        grid-area: a;
+        padding: 13px 0px;
+      }
+      .id2 {
+        grid-area: b;
+        padding: 13px 0px;
+      }
+      .id3 {
+        grid-area: c;
+        padding: 13px 0px;
+      }
+      .id4 {
+        grid-area: d;
+        padding: 13px 0px;
+      }
+      .id5 {
+        grid-area: e;
+        padding: 13px 0px;
+      }
+      .id6 {
+        grid-area: f;
+        padding: 13px 0px;
+      }
+      .id7 {
+        grid-area: g;
+        padding: 13px 0px;
+      }
+      .id8 {
+        grid-area: h;
+        padding: 13px 0px;
+      }
+      .id9 {
+        grid-area: i;
+        padding: 13px 0px;
+      }
+      .id10 {
+        grid-area: j;
+        padding: 13px 0px;
+      }
+      .id11 {
+        grid-area: k;
+        padding: 13px 0px;
+      }
+
+      .id12 {
+        grid-area: l;
+        padding: 13px 0px;
+      }
+
+      .id13 {
+        grid-area: m;
+        padding: 13px 0px;
+      }
+
+      .id14 {
+        grid-area: n;
+        padding: 13px 0px;
+      }
+
+      .id15 {
+        grid-area: o;
+        padding: 13px 0px;
+      }
+
+      .id16 {
+        grid-area: p;
+        padding: 13px 0px;
+      }
+
+      .id17 {
+        grid-area: q;
+        padding: 13px 0px;
+      }
+
+      .bx1 {
+        background-color: #668100;
+      }
+      .bx2 {
+        background-color: #ff6600;
+      }
+      .bx3 {
+        background-color: #9a4c8a;
+      }
+      .bx4 {
+        background-color: #000000;
+      }
+      .id1 {
+        background-color: red;
+      }
+      .id2 {
+        background-color: green;
+      }
+      .id6 {
+        background-color: #b3b3b3;
+      }
+      .id17 {
+        font-size: 20px;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container" id="item1">
+      <div class="id1">1</div>
+      <div class="id2">2</div>
+      <div class="id3">min</div>
+      <div class="id4">max</div>
+      <div class="id5">score</div>
+      <div class="id6">#</div>
+      <div class="bx1 id7">1</div>
+      <div class="bx2 id8">2</div>
+      <div class="bx1 id9">3</div>
+      <div class="bx2 id10">4</div>
+      <div class="bx2 id11">5</div>
+      <div class="bx2 id12">6</div>
+      <div class="bx1 id13">7</div>
+      <div class="bx2 id14">8</div>
+      <div class="bx1 id15">9</div>
+      <div class="bx3 id16">0</div>
+      <div class="bx4 id17">Enter</div>
+    </div>
+  </body>
+</html>
+
+<script></script>
